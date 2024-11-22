@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Aplikacja Flask</title>
+    <title>Lista Projektów</title>
 </head>
 <body>
-    <h1>Witamy w aplikacji Flask!</h1>
-    <nav>
-        <a href="{{ url_for('login') }}">Zaloguj się</a>
-        <a href="{{ url_for('generate') }}">Generuj sygnaturę</a>
-    </nav>
+    <h1>Projekty</h1>
+    <ul>
+        {% for project in projects %}
+        <li>
+            {{ project.name }} ({{ project.prefix }})
+            <button onclick="generateSignature({{ project.id }})">Generuj sygnaturę</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <p id="result"></p>
+    <button onclick="logout()">Wyloguj</button>
+
+    <script>
+        async function generateSignature(projectId) {
+            const response = await fetch(`/generate/${projectId}`);
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('result').textContent = `Sygnatura: ${result.signature}`;
+            } else {
+                document.getElementById('result').textContent = `Błąd: ${result.error}`;
+            }
+        }
+
+        async function logout() {
+            const response = await fetch('/logout', { method: 'POST' });
+            const result = await response.json();
+            alert(result.message);
+            location.reload();
+        }
+    </script>
 </body>
 </html>
