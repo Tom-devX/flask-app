@@ -18,7 +18,7 @@ number_length = 4
 
 users = {
     "Tomek": bcrypt.generate_password_hash("password1").decode("utf-8"),
-    "uMateusz": bcrypt.generate_password_hash("password2").decode("utf-8"),
+    "Mateusz": bcrypt.generate_password_hash("password2").decode("utf-8"),
     "Dawid": bcrypt.generate_password_hash("password3").decode("utf-8"),
 }
 
