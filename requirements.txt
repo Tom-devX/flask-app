@@ -2,3 +2,4 @@ flask
 flask-bcrypt
 flask-session
 flask-sqlalchemy
+gunicorn
