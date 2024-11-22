@@ -1,1 +1,7 @@
 Anaconda3-2024.10-1-Windows-x86_64.exe
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+
