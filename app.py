@@ -17,9 +17,9 @@ prefix = "WK.B."
 number_length = 4
 
 users = {
-    "user1": bcrypt.generate_password_hash("password1").decode("utf-8"),
-    "user2": bcrypt.generate_password_hash("password2").decode("utf-8"),
-    "user3": bcrypt.generate_password_hash("password3").decode("utf-8"),
+    "Tomek": bcrypt.generate_password_hash("password1").decode("utf-8"),
+    "uMateusz": bcrypt.generate_password_hash("password2").decode("utf-8"),
+    "Dawid": bcrypt.generate_password_hash("password3").decode("utf-8"),
 }
 
 def generate_signature(user):
