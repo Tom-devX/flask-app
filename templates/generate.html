@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Generowanie sygnatur</title>
+    <title>Generowanie Sygnatury</title>
 </head>
 <body>
-    <h1>Generowanie sygnatur</h1>
-    <button id="generateButton">Generuj sygnaturę</button>
-    <p id="signature"></p>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <h1>Twoja sygnatura</h1>
+    <p>Wygenerowana sygnatura: {{ signature }}</p>
+    <a href="/">Powrót do strony głównej</a>
 </body>
 </html>
