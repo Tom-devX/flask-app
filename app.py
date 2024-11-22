@@ -8,7 +8,9 @@ bcrypt = Bcrypt(app)
 
 # Konfiguracja aplikacji
 app.config["SECRET_KEY"] = "your1234"  # Zmień na własny klucz
-app.config["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_TYPE"] = "null"
+app.config["PERMANENT_SESSION_LIFETIME"] = 3600  # Czas życia sesji w sekundach (np. 1 godzina)
+
 Session(app)
 
 lock = threading.Lock()
